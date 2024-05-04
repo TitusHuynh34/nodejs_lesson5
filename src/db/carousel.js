@@ -1,29 +1,12 @@
+import { join } from "path";
+import { readJsonFile } from "../utils/read-json-file.util.js";
+
 export class CarouselRepo {
-    static _items = [
-      {
-        id: 1,
-        url: "img/hero-img-1.png",
-        title: "Fruites",
-      },
-      {
-        id: 2,
-        url: "img/hero-img-2.jpg",
-        title: "Vesitables",
-      },
-      {
-        id: 3,
-        url: "img/hero-img-1.png",
-        title: "Carousel Item 3",
-      },
-      {
-        id: 4,
-        url: "img/hero-img-2.jpg",
-        title: "Carousel Item 4",
-      },
-    ];
-  
-    static getItems() {
-      return this._items;
-    }
+  static _dataFilePath = join(process.cwd(), "./src/db/data/carousel.json");
+
+  static getItems() {
+    console.log("CWD: ", process.cwd());
+    console.log("File path: ", this._dataFilePath);
+    return readJsonFile(this._dataFilePath);
   }
-  
+}

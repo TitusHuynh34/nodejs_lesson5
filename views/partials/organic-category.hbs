@@ -1,0 +1,11 @@
+{{!-- Param:
+  - categories: Danh sach cac danh muc
+ --}}
+
+<div class="col-lg-8 text-end">
+  <ul class="nav nav-pills d-inline-flex text-center mb-5">
+    {{#each categories as |_category|}}
+      {{> organic-category-item category=_category}}
+    {{/each}}
+  </ul>
+</div>

@@ -1,0 +1,16 @@
+{{!-- Param:
+  - category: Chua thong tin cua danh muc
+  - defaultActive: Flag danh dau la danh muc duoc mac dinh chon
+ --}}
+
+<div id="{{category.id}}" class="tab-pane fade show p-0 {{#if (eq defaultActive true)}}active{{/if}}">
+  <div class="row g-4">
+    <div class="col-lg-12">
+      <div class="row g-4">
+        {{#each category.products as |_product|}}
+          {{> organic-product-item product=_product}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>

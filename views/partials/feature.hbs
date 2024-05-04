@@ -1,0 +1,13 @@
+{{!-- Param:
+  - features: Chua danh sach thong tin cua cac feature
+ --}}
+
+<div class="container-fluid featurs py-5">
+  <div class="container py-5">
+    <div class="row g-4">
+      {{#each features as |_item|}}
+        {{> feature-item item=_item}}
+      {{/each}}
+    </div>
+  </div>
+</div>
